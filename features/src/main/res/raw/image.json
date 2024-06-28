@@ -1,0 +1,16 @@
+{
+  "id": "sdui",
+  "type": "LazyColumn",
+  "body":[
+    {
+      "type": "Image",
+      "url": "https://cdni-hw.bugaboo.tv/i/images/2022/12/02/pic_72_12_65_1669980430_2649.jpg",
+      "ratio": "4:3"
+    },
+    {
+      "type": "Text",
+      "text": "สวัสดีครับ",
+      "size": 100
+    }
+  ]
+}
