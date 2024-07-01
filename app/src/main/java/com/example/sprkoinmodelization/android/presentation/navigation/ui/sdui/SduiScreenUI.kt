@@ -1,4 +1,4 @@
-package com.example.sprkoinmodelization.android.presentation.ui.sdui
+package com.example.sprkoinmodelization.android.presentation.navigation.ui.sdui
 
 import androidx.compose.runtime.Composable
 import androidx.navigation.compose.NavHost

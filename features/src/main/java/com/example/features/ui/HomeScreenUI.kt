@@ -1,6 +1,5 @@
 package com.example.features.ui
 
-import androidx.compose.foundation.ExperimentalFoundationApi
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
@@ -62,7 +61,8 @@ fun initHomeScreen() {
             )
         }
     } else {
-        test()
+        horizontalTest()
+//        test()
     }
 }
 
@@ -183,7 +183,6 @@ fun test() {
 }
 
 
-@OptIn(ExperimentalFoundationApi::class)
 @Composable
 fun horizontalTest() {
     Column {
@@ -191,30 +190,8 @@ fun horizontalTest() {
             4
         })
         HorizontalPager(
-            state = pagerState,
-            contentPadding = PaddingValues(end = 200.dp)
+            state = pagerState
         ) { page ->
-//        Card(
-//            Modifier
-//                .size(200.dp)
-//                .graphicsLayer {
-//                    // Calculate the absolute offset for the current page from the
-//                    // scroll position. We use the absolute value which allows us to mirror
-//                    // any effects for both directions
-//                    val pageOffset = (
-//                            (pagerState.currentPage - page) + pagerState
-//                                .currentPageOffsetFraction
-//                            ).absoluteValue
-//
-//                    // We animate the alpha, between 50% and 100%
-//                    alpha = lerp(
-//                        start = 0.5f,
-//                        stop = 1f,
-//                        fraction = 1f - pageOffset.coerceIn(0f, 1f)
-//                    )
-//                }
-//        ) {
-//            Log.d("interceptor Test", pagerState.canScrollForward.toString())
             Card(
                 modifier = Modifier
                     .wrapContentSize()
@@ -239,17 +216,11 @@ fun horizontalTest() {
         ) {
             repeat(4) { iteration ->
                 val color =
-                    if ((pagerState.currentPage == iteration - 1 && !pagerState.canScrollForward)
-                        && pagerState.currentPage != pagerState.pageCount
-                    ) {
-                        Color.DarkGray
-                    } else if ((pagerState.currentPage == iteration && pagerState.canScrollForward) || ((pagerState.currentPage + 1) == pagerState.pageCount) && (iteration + 1 == pagerState.pageCount)) {
+                    if ((pagerState.currentPage == iteration)) {
                         Color.DarkGray
                     } else {
                         Color.LightGray
                     }
-//                val color =
-//                    if (pagerState.currentPage == iteration) Color.DarkGray else Color.LightGray
                 Box(
                     modifier = Modifier
                         .padding(2.dp)

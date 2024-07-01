@@ -1,4 +1,4 @@
-package com.example.sprkoinmodelization.android.presentation.ui
+package com.example.sprkoinmodelization.android.presentation.navigation.ui
 
 import android.os.Bundle
 import androidx.activity.ComponentActivity
@@ -19,11 +19,14 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
 import androidx.window.core.layout.WindowWidthSizeClass
+import com.example.features.ui.SduiFeatures
+import com.example.features.ui.horizontalTest
 import com.example.sdui.ui.component.video.VideoPlayer
-import com.example.sprkoinmodelization.android.presentation.navigation.Screen
-import com.example.sprkoinmodelization.android.presentation.ui.home.HomeScreenUI
-import com.example.sprkoinmodelization.android.presentation.ui.sdui.SduiScreenUI
+import com.example.sprkoinmodelization.android.presentation.navigation.enumclass.Screen
+import com.example.sprkoinmodelization.android.presentation.navigation.ui.home.HomeScreenUI
+import com.example.sprkoinmodelization.android.presentation.navigation.ui.sdui.SduiScreenUI
 import com.example.sprkoinmodelization.ui.theme.NavigationSuiteLayoutGuideTheme
+import com.example.sprkoinmodelization.ui.theme.SprKoinModelizationTheme
 
 class MainScreenActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -31,9 +34,10 @@ class MainScreenActivity : ComponentActivity() {
         enableEdgeToEdge()
         setContent {
             NavigationSuiteLayoutGuideTheme {
+//            SprKoinModelizationTheme {
                 Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
                     var selectedItemIndex by remember {
-                        mutableStateOf(Screen.HOME)
+                        mutableStateOf(0)
                     }
                     val windowWidthClass =
                         currentWindowAdaptiveInfo().windowSizeClass.windowWidthSizeClass
@@ -41,9 +45,9 @@ class MainScreenActivity : ComponentActivity() {
                         navigationSuiteItems = {
                             Screen.entries.forEachIndexed { index, screen ->
                                 item(
-                                    selected = screen == selectedItemIndex,
+                                    selected = index == selectedItemIndex,
                                     onClick = {
-                                        selectedItemIndex = screen
+                                        selectedItemIndex = index
                                     },
                                     icon = {
                                         Icon(
@@ -69,19 +73,17 @@ class MainScreenActivity : ComponentActivity() {
                             modifier = Modifier
                                 .fillMaxSize()
                         ) {
-                            Screen.entries.forEachIndexed { index, screen ->
-                                when (selectedItemIndex) {
-                                    Screen.HOME -> {
-                                        HomeScreenUI()
-                                    }
+                            when (selectedItemIndex) {
+                                0 -> {
+                                    HomeScreenUI()
+                                }
 
-                                    Screen.SDUI -> {
-                                        SduiScreenUI()
-                                    }
+                                1 -> {
+                                    SduiScreenUI()
+                                }
 
-                                    Screen.VIDEO -> {
-                                        VideoPlayer(this@MainScreenActivity)
-                                    }
+                                2 -> {
+                                    VideoPlayer(this@MainScreenActivity)
                                 }
                             }
                         }

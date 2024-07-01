@@ -1,16 +1,83 @@
 {
   "id": "sdui",
   "type": "LazyColumn",
-  "body":[
+  "body": [
     {
       "type": "Image",
       "url": "https://cdni-hw.bugaboo.tv/i/images/2022/12/02/pic_72_12_65_1669980430_2649.jpg",
       "ratio": "4:3"
     },
     {
-      "type": "Text",
-      "text": "สวัสดีครับ",
-      "size": 100
+      "type": "LazyRow",
+      "body": [
+        {
+          "type": "Image",
+          "url": "https://cdni-hw.bugaboo.tv/i/images/2022/12/02/pic_72_12_65_1669980430_2649.jpg"
+        },
+        {
+          "type": "Image",
+          "url": "https://cdni-hw.bugaboo.tv/i/images/2022/12/02/pic_72_12_65_1669980430_2649.jpg"
+        },
+        {
+          "type": "Image",
+          "url": "https://cdni-hw.bugaboo.tv/i/images/2022/12/02/pic_72_12_65_1669980430_2649.jpg"
+        }
+      ]
+    },
+    {
+      "type": "HorizontalPager",
+      "imgList": [
+        "https://cdni-hw.bugaboo.tv/i/images/2022/12/02/pic_72_12_65_1669980430_2649.jpg",
+        "https://cdni-hw.bugaboo.tv/i/images/2022/12/02/pic_72_12_65_1669980430_2649.jpg",
+        "https://cdni-hw.bugaboo.tv/i/images/2022/12/02/pic_72_12_65_1669980430_2649.jpg",
+        "https://cdni-hw.bugaboo.tv/i/images/2022/12/02/pic_72_12_65_1669980430_2649.jpg",
+        "https://cdni-hw.bugaboo.tv/i/images/2022/12/02/pic_72_12_65_1669980430_2649.jpg"
+      ]
+    },
+    {
+      "type": "RowColumn",
+      "spacing": -1,
+      "list": [
+        {
+          "type": "Text",
+          "text": "เริ่มต้นใช้งาน",
+          "size": 25,
+          "color": "#222222",
+          "fontStyle": false,
+          "fontWeight": "Bold",
+          "padding": 10
+        },
+        {
+          "type": "Text",
+          "text": "เข้าสู่ระบบ",
+          "size": 25,
+          "color": "#868686",
+          "fontStyle": true,
+          "fontWeight": "Normal",
+          "padding": 10
+        }
+      ]
+    },
+    {
+      "type": "Column",
+      "alignment": "Center",
+      "arrangement": "Center",
+      "padding": 10,
+      "list": [
+        {
+          "type": "Button",
+          "text": "ยืนยัน",
+          "buttonStyle": "OUTLINED",
+          "fillWeightStyle": 0.5,
+          "size": 20,
+          "color": "#555555",
+          "fontWeight": "Bold"
+        }
+      ]
+    },
+    {
+      "type": "Spacer",
+      "height": 20
     }
   ]
 }

@@ -5,8 +5,12 @@ enum class ComponentType(
 ) {
     IMAGE("Image"),
     LazyColumn("LazyColumn"),
+    LazyRow("LazyRow"),
     RowColumn("RowColumn"),
     Column("Column"),
-    Text("Text")
+    Text("Text"),
+    Button("Button"),
+    HorizontalPager("HorizontalPager"),
+    Spacer("Spacer")
 
 }

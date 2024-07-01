@@ -14,10 +14,20 @@ object MoshiUtil {
             PolymorphicJsonAdapterFactory
                 .of(Component::class.java, "type")
                 .withSubtype(Component.LazyColumn::class.java, ComponentType.LazyColumn.value)
+                .withSubtype(Component.LazyRow::class.java, ComponentType.LazyRow.value)
                 .withSubtype(Component.Image::class.java, ComponentType.IMAGE.value)
                 .withSubtype(Component.Column::class.java, ComponentType.Column.value)
                 .withSubtype(Component.RowColumn::class.java, ComponentType.RowColumn.value)
                 .withSubtype(Component.Text::class.java, ComponentType.Text.value)
+                .withSubtype(Component.Button::class.java, ComponentType.Button.value)
+                .withSubtype(
+                    Component.HorizontalPager::class.java,
+                    ComponentType.HorizontalPager.value
+                )
+                .withSubtype(
+                    Component.Spacer::class.java,
+                    ComponentType.Spacer.value
+                )
                 .withDefaultValue(Component.Unknown)
 
         return Moshi

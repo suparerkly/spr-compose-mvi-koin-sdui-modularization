@@ -58,6 +58,7 @@ dependencies {
     implementation(platform(libs.koin.bom))
     implementation(libs.koin.core)
     implementation(libs.androidx.material3.android)
+    implementation(libs.androidx.foundation.android)
 
     // Data store
     implementation(libs.androidx.datastore.preferences)

@@ -1,6 +1,8 @@
-package com.example.sdui.ui.component.lazycolumn
+package com.example.sdui.ui.component.lazyrow
 
-import androidx.compose.foundation.lazy.LazyColumn
+import androidx.compose.foundation.layout.aspectRatio
+import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.lazy.LazyRow
 import androidx.compose.foundation.lazy.items
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
@@ -8,11 +10,14 @@ import com.example.sdui.data.model.component.AppUiComponent
 import com.example.sdui.data.model.component.Component
 
 @Composable
-fun LazyColumnComponent(
+fun LazyRowComponent(
     modifier: Modifier = Modifier,
-    component: Component.LazyColumn
+    component: Component.LazyRow
 ) {
-    LazyColumn {
+    LazyRow(
+        modifier = Modifier
+            .fillMaxWidth()
+    ) {
         items(component.body ?: emptyList()) { component ->
             AppUiComponent(
                 component = component,

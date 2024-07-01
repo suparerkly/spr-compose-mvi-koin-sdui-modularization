@@ -1,4 +1,4 @@
-package com.example.sprkoinmodelization.android.presentation.navigation
+package com.example.sprkoinmodelization.android.presentation.navigation.enumclass
 
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Favorite

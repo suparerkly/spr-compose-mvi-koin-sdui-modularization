@@ -28,7 +28,12 @@ fun ImageComponent(
         },
         modifier =
         modifier
-            .mapSize(component.width, component.height, component.style, component.ratio)
+            .mapSize(
+                component.width,
+                component.height,
+                component.style,
+                component.ratio
+            )
             .mapRatio(component.ratio)
     )
 }

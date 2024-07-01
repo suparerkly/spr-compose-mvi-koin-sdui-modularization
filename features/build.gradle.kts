@@ -89,4 +89,7 @@ dependencies {
     implementation("io.coil-kt:coil-compose:2.6.0")
     implementation("io.coil-kt:coil-svg:2.6.0")
 
+    // com.google.accompanist
+//    implementation("com.google.accompanist:accompanist-pager:0.32.0")
+
 }
