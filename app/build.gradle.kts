@@ -69,19 +69,19 @@ dependencies {
     debugImplementation(libs.androidx.ui.test.manifest)
 
     // koin
-    implementation("io.insert-koin:koin-android:3.5.6")
-    implementation("io.insert-koin:koin-androidx-compose:3.5.6")
+    implementation(libs.koin.android)
+    implementation(libs.koin.androidx.compose)
 
     //retrofit
-    implementation("com.squareup.retrofit2:retrofit:2.11.0")
-    implementation("com.squareup.retrofit2:converter-gson:2.11.0")
-    implementation("com.squareup.retrofit2:converter-moshi:2.4.0")
+    implementation(libs.retrofit.v2110)
+    implementation(libs.converter.gson)
+    implementation(libs.converter.moshi.v240)
 
     //lib
-    implementation("com.spr.sprLibApplication:sprLibSDUI:0.0.6-test02")
+    implementation(libs.sprlibsdui)
 
     //navigation
-    implementation("androidx.navigation:navigation-compose:2.7.7")
+    implementation(libs.androidx.navigation.compose)
 
     //implement module project
     implementation(project(":features"))

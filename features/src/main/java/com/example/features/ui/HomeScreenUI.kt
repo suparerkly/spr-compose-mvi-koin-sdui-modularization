@@ -62,7 +62,6 @@ fun initHomeScreen() {
         }
     } else {
         horizontalTest()
-//        test()
     }
 }
 
@@ -86,23 +85,23 @@ fun lottieCloseExample(modifier: Modifier) {
     )
 }
 
-@Composable
-fun HomeScreenUI() {
-    val viewModel = koinViewModel<HomeViewModel>()
-    val homeScreen = viewModel.homeBannerUiState.collectAsState()
+//@Composable
+//fun HomeScreenUI() {
+//    val viewModel = koinViewModel<HomeViewModel>()
+//    val homeScreen = viewModel.homeBannerUiState.collectAsState()
 
 //    var type by remember { mutableStateOf("column") }
 //    if (homeScreen.value != null) {
 //        type = homeScreen.value.data?.type ?: ""
 //    }
 
-    Column(
-        modifier = Modifier
-            .fillMaxSize()
-            .verticalScroll(rememberScrollState())
-    ) {
+//    Column(
+//        modifier = Modifier
+//            .fillMaxSize()
+//            .verticalScroll(rememberScrollState())
+//    ) {
 //        initHomePageDetail(homeScreen.value.data?.data ?: listOf())
-    }
+//    }
 
 //    val pagerState =
 //        rememberPagerState(pageCount = {
@@ -120,26 +119,26 @@ fun HomeScreenUI() {
 //            imagePngJpgUI(image = homeScreen.value.data?.get(page)?.image ?: "")
 //        }
 //    }
-}
+//}
 
-@Composable
-fun initHomePageDetail(list: List<dataResult>) {
-    list.forEach {
-        if (it.type_data == "row") {
-            LazyRow {
-                items(it.img?.size ?: 0) { index ->
+//@Composable
+//fun initHomePageDetail(list: List<dataResult>) {
+//    list.forEach {
+//        if (it.type_data == "row") {
+//            LazyRow {
+//                items(it.img?.size ?: 0) { index ->
 //                    imagePngJpgUI(image = it.img?.get(index) ?: "")
-                }
-            }
-        } else {
-            LazyColumn {
-                items(it.img?.size ?: 0) { index ->
+//                }
+//            }
+//        } else {
+//            LazyColumn {
+//                items(it.img?.size ?: 0) { index ->
 //                    imagePngJpgUI(image = it.img?.get(index) ?: "")
-                }
-            }
-        }
-    }
-}
+//                }
+//            }
+//        }
+//    }
+//}
 
 //@Composable
 //fun UiTest() {
@@ -173,14 +172,13 @@ fun initHomePageDetail(list: List<dataResult>) {
 //    }
 //}
 
-@Composable
-fun test() {
-//    horizontalTest()
-    val viewModel = koinViewModel<HomeViewModel>()
-    val componentTest = viewModel.componentTest.collectAsState()
-
-    AppUiComponent(component = componentTest.value.data ?: Component.Unknown)
-}
+//@Composable
+//fun test() {
+//    val viewModel = koinViewModel<HomeViewModel>()
+//    val componentTest = viewModel.componentTest.collectAsState()
+//
+//    AppUiComponent(component = componentTest.value.data ?: Component.Unknown)
+//}
 
 
 @Composable

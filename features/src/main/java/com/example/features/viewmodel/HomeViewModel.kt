@@ -5,21 +5,13 @@ import android.util.Log
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.core.model.home.HomeResultModel
-import com.example.core.model.sdui.Body
-import com.example.core.model.sdui.SduiModel
 import com.example.core.utils.NetworkResult
-import com.example.data.repository.HomeBannerRepositoryImpl
+import com.example.data.repository.HomeBannerRepository
 import com.example.features.R
-import com.example.features.state.BannerUiState
 import com.example.features.state.ComponentTestState
 import com.example.features.state.HomeBannerUiState
-import com.example.sdui.data.di.remote.SduiRemoteDatasourceImpl
 import com.example.sdui.data.model.component.Component
-import com.example.sdui.utils.MoshiUtil
 import com.example.sdui.utils.extentions.fromJsonComponent
-import com.google.gson.Gson
-import com.google.gson.GsonBuilder
-import com.squareup.moshi.Moshi
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.update
@@ -28,7 +20,7 @@ import javax.inject.Inject
 
 class HomeViewModel @Inject constructor(
     private val context: Context,
-    private val homeScreenRepository: HomeBannerRepositoryImpl
+    private val homeScreenRepository: HomeBannerRepository
 ) : ViewModel() {
 
     private val _homeTestUiState = MutableStateFlow(HomeResultModel())
@@ -44,7 +36,6 @@ class HomeViewModel @Inject constructor(
     val componentTest: StateFlow<ComponentTestState> get() = _componentTest
 
     init {
-//        getHomeScreen()
         getSduiScreen()
     }
 
@@ -77,24 +68,16 @@ class HomeViewModel @Inject constructor(
                     }
                 }
             } catch (ex: Exception) {
-
+                Log.d("exception", "ERROR EXCEPTION$ex")
             }
         }
     }
 
-    fun getImageComponent(): Component =
+    private fun getImageComponent(): Component =
         context.resources.openRawResource(R.raw.image).bufferedReader()
             .use { it.readText() }
             .fromJsonComponent()
             ?: Component.Unknown
-
-    fun test() {
-        context.resources
-            .openRawResource(R.raw.image)
-            .bufferedReader()
-            .use { it.readText() }
-            .fromJsonComponent()
-    }
 
     fun getHomeScreen() {
         viewModelScope.launch {
@@ -102,9 +85,6 @@ class HomeViewModel @Inject constructor(
                 homeScreenRepository.getHomeBanner().collect { resources ->
                     when (resources) {
                         is NetworkResult.Success -> {
-//                            val listBanner = resources.data.data?.layout?.filter { data ->
-//                                data.type == "banner"
-//                            }
                             _loadingUiState.update {
                                 false
                             }
@@ -129,7 +109,7 @@ class HomeViewModel @Inject constructor(
                     }
                 }
             } catch (ex: Exception) {
-                Log.d("exception", "ERROR EXCEPTION")
+                Log.d("exception", "ERROR EXCEPTION$ex")
             }
         }
     }

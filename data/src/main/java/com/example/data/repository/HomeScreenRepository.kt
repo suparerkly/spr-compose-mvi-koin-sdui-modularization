@@ -1,14 +1,13 @@
 package com.example.data.repository
 
-import com.example.core.api.home.HomeRepository
-import com.example.core.model.sdui.Body
+import com.example.core.api.home.HomeAPIInterface
 import com.example.core.utils.NetworkResult
 import com.google.gson.Gson
 import kotlinx.coroutines.flow.catch
 import kotlinx.coroutines.flow.flow
 import javax.inject.Inject
 
-class HomeBannerRepositoryImpl @Inject constructor(private val repository: HomeRepository) {
+class HomeBannerRepository @Inject constructor(private val repository: HomeAPIInterface) {
     suspend fun getSduiTest() = flow {
         emit(NetworkResult.Loading(true))
         val gson = Gson()

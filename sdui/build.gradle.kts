@@ -83,17 +83,17 @@ dependencies {
     androidTestImplementation(libs.androidx.test.espresso.core)
 
     // koin
-    implementation("io.insert-koin:koin-android:3.5.6")
-    implementation("io.insert-koin:koin-androidx-compose:3.5.6")
+    implementation(libs.koin.android)
+    implementation(libs.koin.androidx.compose)
 
     //libs
 //    implementation("com.spr.sprLibApplication:sprLibSDUI:0.0.6-test03")
 //    implementation("com.google.android.gms:play-services-ads:22.6.0")
-    implementation("io.sanghun:compose-video:1.2.0")
-    implementation("androidx.media3:media3-exoplayer:1.1.0") // [Required] androidx.media3 ExoPlayer dependency
-    implementation("androidx.media3:media3-session:1.1.0") // [Required] MediaSession Extension dependency
-    implementation("androidx.media3:media3-ui:1.1.0") // [Required] Base Player UI
+    implementation(libs.compose.video)
+    implementation(libs.androidx.media3.exoplayer) // [Required] androidx.media3 ExoPlayer dependency
+    implementation(libs.androidx.media3.session) // [Required] MediaSession Extension dependency
+    implementation(libs.androidx.media3.ui) // [Required] Base Player UI
 
-    implementation("androidx.media3:media3-exoplayer-dash:1.1.0") // [Optional] If your media item is DASH
-    implementation("androidx.media3:media3-exoplayer-hls:1.1.0") // [Optional] If your media item is HLS (m3u8..)
+    implementation(libs.androidx.media3.exoplayer.dash) // [Optional] If your media item is DASH
+    implementation(libs.androidx.media3.exoplayer.hls) // [Optional] If your media item is HLS (m3u8..)
 }

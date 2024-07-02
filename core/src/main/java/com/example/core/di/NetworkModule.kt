@@ -1,6 +1,6 @@
 package com.example.core.di
 
-import com.example.core.api.home.HomeRepository
+import com.example.core.api.home.HomeAPIInterface
 import okhttp3.OkHttpClient
 import org.koin.dsl.module
 import retrofit2.Retrofit
@@ -43,8 +43,8 @@ fun provideRetrofit(
 //        .build()
 //}
 
-fun provideService(retrofit: Retrofit): HomeRepository =
-    retrofit.create(HomeRepository::class.java)
+fun provideService(retrofit: Retrofit): HomeAPIInterface =
+    retrofit.create(HomeAPIInterface::class.java)
 
 val networkModule = module {
     single { provideHttpClient() }

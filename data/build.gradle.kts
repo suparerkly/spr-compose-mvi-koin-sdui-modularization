@@ -46,8 +46,8 @@ dependencies {
     implementation(libs.koin.core)
 
     // koin
-    implementation("io.insert-koin:koin-android:3.5.6")
-    implementation("io.insert-koin:koin-androidx-compose:3.5.6")
+    implementation(libs.koin.android)
+    implementation(libs.koin.androidx.compose)
 
     //retrofit
     implementation(libs.squareup.retrofit)
@@ -59,9 +59,9 @@ dependencies {
     implementation(project(":core"))
     implementation(project(":sdui"))
 
-    implementation("com.squareup.retrofit2:converter-gson:2.11.0")
+    implementation(libs.converter.gson)
 
 
-    implementation("com.google.dagger:dagger:2.47")
-    kapt("com.google.dagger:dagger-compiler:2.47")
+    implementation(libs.dagger)
+    kapt(libs.dagger.compiler)
 }

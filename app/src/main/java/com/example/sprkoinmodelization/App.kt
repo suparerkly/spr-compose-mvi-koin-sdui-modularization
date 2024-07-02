@@ -15,7 +15,6 @@ class App : Application() {
             printLogger()
             androidContext(this@App)
             modules(networkModule, homeModule, viewModelModule, sduiModule)
-
         }
     }
 }
